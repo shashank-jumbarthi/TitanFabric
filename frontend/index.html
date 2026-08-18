@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TitanFabric</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="TitanFabric home">
+        <span class="brand-mark">TF</span>
+        <span>TitanFabric</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#catalog">Catalog</a>
+        <a href="#quote">Quote</a>
+        <a href="#process">Process</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Textile sourcing workspace</p>
+          <h1>TitanFabric</h1>
+          <p>
+            Source production-ready fabrics, compare specifications, and turn
+            selected yardage into a fast quote request.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#catalog">Browse catalog</a>
+            <a class="button secondary" href="#quote">Build quote</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Layered textile samples">
+          <span class="swatch linen"></span>
+          <span class="swatch cotton"></span>
+          <span class="swatch denim"></span>
+          <span class="swatch silk"></span>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Sourcing highlights">
+        <div>
+          <strong>5</strong>
+          <span>curated fabric lines</span>
+        </div>
+        <div>
+          <strong>9-18</strong>
+          <span>day lead-time window</span>
+        </div>
+        <div>
+          <strong>3</strong>
+          <span>sustainable options</span>
+        </div>
+      </section>
+
+      <section class="workspace" id="catalog">
+        <div class="section-heading">
+          <p class="eyebrow">Catalog</p>
+          <h2>Compare fabric options</h2>
+        </div>
+
+        <div class="filters" aria-label="Catalog filters">
+          <label>
+            Category
+            <select id="categoryFilter">
+              <option value="all">All</option>
+              <option value="linen">Linen</option>
+              <option value="cotton">Cotton</option>
+              <option value="denim">Denim</option>
+              <option value="silk">Silk</option>
+              <option value="knit">Knit</option>
+            </select>
+          </label>
+          <label class="check">
+            <input id="sustainableFilter" type="checkbox">
+            Sustainable only
+          </label>
+          <label>
+            Max price
+            <input id="priceFilter" type="range" min="8" max="30" value="30">
+            <span id="priceLabel">$30/yd</span>
+          </label>
+        </div>
+
+        <div class="catalog-grid" id="catalogGrid"></div>
+      </section>
+
+      <section class="quote-layout" id="quote">
+        <div class="section-heading">
+          <p class="eyebrow">Quote builder</p>
+          <h2>Plan a production request</h2>
+        </div>
+        <aside class="quote-panel" aria-live="polite">
+          <div id="quoteItems" class="quote-items"></div>
+          <div class="quote-summary">
+            <div><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+            <div><span>Shipping</span><strong id="shipping">$0.00</strong></div>
+            <div><span>Service</span><strong id="service">$0.00</strong></div>
+            <div class="total"><span>Total</span><strong id="total">$0.00</strong></div>
+          </div>
+          <form id="quoteForm" class="quote-form">
+            <label>
+              Name
+              <input name="name" required placeholder="Maya Chen">
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" required placeholder="maya@example.com">
+            </label>
+            <label>
+              Destination
+              <select name="destination">
+                <option value="domestic">Domestic</option>
+                <option value="international">International</option>
+              </select>
+            </label>
+            <label>
+              Notes
+              <textarea name="notes" rows="3" placeholder="Timeline, swatches, color matching"></textarea>
+            </label>
+            <button class="button primary" type="submit">Send quote request</button>
+          </form>
+          <p id="formStatus" class="form-status" role="status"></p>
+        </aside>
+      </section>
+
+      <section class="process" id="process">
+        <div>
+          <p class="eyebrow">Process</p>
+          <h2>From selection to production</h2>
+        </div>
+        <ol>
+          <li><strong>Choose materials</strong><span>Filter by use, cost, composition, and sustainability.</span></li>
+          <li><strong>Confirm yardage</strong><span>Minimums are enforced automatically in the quote builder.</span></li>
+          <li><strong>Request sourcing</strong><span>The quote payload is ready for a backend workflow or CRM handoff.</span></li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

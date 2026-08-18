@@ -1,0 +1,2 @@
+# TitanFabric runs on Python's standard library.
+# No third-party packages are required for the MVP.
